@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><!--標籤為繁體中文-->
+<html>
+<head>
+<link rel="icon" href="https://upload.wikimedia.org/wikipedia/zh/6/65/NQU_logo.png" type="image/ico" />
+<meta charset="utf-8" /><!--設定標籤編碼為utf-8-->
+<title>LinYu_1022Homework</title>
+<script type="text/javascript"><!--在 HTML頁面中插入avaScript-->
+var n=10;
+var countdownid;
+function initial(){ timeout(); }//初始化
+function timeout(){
+ document.getElementById("countdown").innerHTML=n;
+ if (n==0){ 
+  alert("時間到了！");
+  clearTimeout(countdownid);/*clearTimeout()函數停止setTimeout()繼續運作*/
+ }else{
+  n--;
+  if(countdownid){
+   clearTimeout(countdownid);
+  }
+  countdownid=setTimeout(timeout,1000);/*setTimeout(code函數,等待毫秒數)*/
+ }
+}
+ </script>
+ </head>
+ <body onload="initial();">
+ <div id="countdown"></div>
+</body>
+</html>
